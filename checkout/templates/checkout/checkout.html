@@ -49,7 +49,7 @@
                         </div>
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0 smamll">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                            <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
                         <div class="col-3 text-right">
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="col-12 col-lg-6">
-                <p class="text-muted"> Please fill out the form below to complete your order</p>
+                <p class="text-muted">Please fill out the form below to complete your order</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
@@ -80,8 +80,8 @@
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                     </fieldset>
-                    <fieldset class="rounded px-3 mb-5"></fieldset>
-                    <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                    <fieldset class="rounded px-3 mb-5">
+                        <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
                         {{ order_form.phone_number | as_crispy_field }}
                         {{ order_form.country | as_crispy_field }}
                         {{ order_form.postcode | as_crispy_field }}
@@ -100,6 +100,7 @@
                                 </label>
                             {% endif %}
                         </div>
+                    </fieldset>
                     <fieldset class="px-3">
                         <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
                         <!-- A Stripe card element will go here -->
