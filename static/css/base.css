@@ -44,6 +44,13 @@ body {
     border: 1px solid black;
 }
 
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -71,7 +78,7 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background: #ffffff;
+    background: white;
     z-index: -1;
 }
 
@@ -98,6 +105,7 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
+/* Bootstrap toasts */
 .message-container {
     position: fixed;
     top: 72px;
@@ -185,8 +193,8 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
-.allauth-form-inner-content input::placeholder {
-    color: none;
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
 }
 
 .allauth-form-inner-content input::placeholder {
@@ -239,5 +247,16 @@ input[name='q']::placeholder {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
     }
 }
