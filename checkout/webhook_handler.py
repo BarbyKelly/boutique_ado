@@ -9,6 +9,7 @@ from profiles.models import UserProfile
 
 import json
 import time
+import stripe
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
@@ -35,13 +36,13 @@ class StripeWH_Handler:
 
 
     def handle_event(self, event):
-        """Handle a generic/unknown/unexpected webhook event"""
+        """ Handle a generic/unknown/unexpected webhook event """
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
 
     def handle_payment_intent_succeeded(self, event):
-        """Handle the payment_intent.succeeded webhook from Stripe"""
+        """ Handle the payment_intent.succeeded webhook from Stripe """
         intent = event.data.object
         pid = intent.id
         bag = intent.metadata.bag
@@ -49,7 +50,7 @@ class StripeWH_Handler:
 
         # Get the Charge object - updated
         stripe_charge = stripe.Charge.retrieve(
-            intent.latest_charge
+        intent.latest_charge
         )
 
         billing_details = stripe_charge.billing_details # updated

@@ -29,8 +29,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-barbykelly-boutiqueado-nk840uhxaj6.ws.codeinstitute-ide.net', 'localhost'],
-['https://git.heroku.com/bk-boutique-ado.git']
+ALLOWED_HOSTS = [
+    '8000-barbykelly-boutiqueado-nk840uhxaj6.ws.codeinstitute-ide.net', 'localhost',
+    'bk-boutique-ado.herokuapp.com',]
 
 
 # Application definition
