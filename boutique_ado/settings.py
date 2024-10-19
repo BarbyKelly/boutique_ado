@@ -30,7 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-barbykelly-boutiqueado-nk840uhxaj6.ws.codeinstitute-ide.net', 'localhost',
+    '8000-barbykelly-boutiqueado-nk840uhxaj6.ws.codeinstitute-ide.net',
+    'localhost',
     'bk-boutique-ado.herokuapp.com',
     'bk-boutique-ado-8408cc584c06.herokuapp.com',]
 
