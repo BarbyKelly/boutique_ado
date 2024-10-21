@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
     'bk-boutique-ado.herokuapp.com',
     'bk-boutique-ado-8408cc584c06.herokuapp.com',]
 
+CSRF_TRUSTED_ORIGINS = ["https://*.herokuapp.com"]
 
 # Application definition
 
